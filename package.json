@@ -1,0 +1,34 @@
+{
+	"name": "e2e-tests-example",
+	"version": "1.0.0",
+	"description": "Example how to write E2E tests for a Gutenberg block in WordPress",
+	"author": "Liip AG",
+	"dependencies": {},
+	"devDependencies": {
+		"@wordpress/scripts": "^6.0.0"
+	},
+	"private": true,
+  "scripts": {
+    "start": "wp-scripts start",
+    "dev": "npm run start",
+    "prebuild": "npm run check-engines",
+    "build": "wp-scripts build",
+    "env": "wp-scripts env",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "lint": "npm run lint:pkg-json && npm run lint:css && npm run lint:js",
+    "lint:css": "wp-scripts lint-style 'src/**/*.css'",
+    "lint:js": "wp-scripts lint-js",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "test:e2e": "wp-scripts test-e2e"
+  },
+  "wp-env": {
+    "plugin-dir": "e2e-tests-example",
+    "plugin-name": "E2E Tests Example",
+    "docker-template": "./docker-compose.override.yml",
+    "welcome-logo": [
+      "E2E Tests Example"
+    ],
+    "welcome-build-command": "npm run dev"
+  }
+}
