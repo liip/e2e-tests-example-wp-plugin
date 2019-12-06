@@ -18,6 +18,25 @@ const {
 	SelectControl, // Our select control to choose the background color
 	CheckboxControl,
 } = wp.components;
+const {
+	applyFilters,
+} = wp.hooks;
+
+let bgColorOptions = [
+	{
+		value: '',
+		label: __( 'No Background Color', 'e2e-tests-example' ),
+	},
+	{
+		value: 'paleturquoise',
+		label: __( 'Light Blue', 'e2e-tests-example' ),
+	},
+	{
+		value: 'orange',
+		label: __( 'Orange', 'e2e-tests-example' ),
+	},
+];
+bgColorOptions = applyFilters( 'e2eTestsExample.wrapperBlock.bgColorOptions', bgColorOptions );
 
 registerBlockType( 'e2e-tests-example/wrapper-block', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
@@ -58,20 +77,7 @@ registerBlockType( 'e2e-tests-example/wrapper-block', {
 						<SelectControl
 							label={ __( 'Background Color', 'e2e-tests-example' ) }
 							value={ bgColor }
-							options={ [
-								{
-									value: '',
-									label: __( 'No Background Color', 'e2e-tests-example' ),
-								},
-								{
-									value: 'paleturquoise',
-									label: __( 'Light Blue', 'e2e-tests-example' ),
-								},
-								{
-									value: 'orange',
-									label: __( 'Orange', 'e2e-tests-example' ),
-								},
-							] }
+							options={ bgColorOptions }
 							onChange={ ( selectedOption ) => setAttributes( { bgColor: selectedOption } ) }
 						/>
 					</PanelBody>
