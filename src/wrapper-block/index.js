@@ -115,18 +115,17 @@ registerBlockType( 'e2e-tests-example/wrapper-block', {
 	save( { attributes } ) {
 		const {
 			bgColor = '',
-			alignment = '',
 			marginBottom = false,
 		} = attributes;
 
-		let styles = {};
+		const styles = {};
 
 		// Only set attributes when background color is chosen
 		if ( '' !== bgColor ) {
-			styles['backgroundColor'] = bgColor;
+			styles.backgroundColor = bgColor;
 		}
 		if ( marginBottom ) {
-			styles['marginBottom'] = '60px';
+			styles.marginBottom = '60px';
 		}
 
 		return (

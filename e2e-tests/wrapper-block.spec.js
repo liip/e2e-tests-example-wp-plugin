@@ -6,7 +6,7 @@ import {
 	enablePageDialogAccept,
 	getEditedPostContent,
 	insertBlock,
-} from '@wordpress/e2e-test-utils'
+} from '@wordpress/e2e-test-utils';
 import {
 	clickElementByText,
 	selectBlockByName,

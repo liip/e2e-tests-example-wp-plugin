@@ -1,1 +1,1 @@
-import './wrapper-block/index'
+import './wrapper-block/index';
