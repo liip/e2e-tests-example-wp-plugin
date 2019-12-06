@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`wrapper block Background color should be applied 1`] = `
+"<!-- wp:e2e-tests-example/wrapper-block {\\"bgColor\\":\\"orange\\"} -->
+<div style=\\"background-color:orange\\" class=\\"wp-block-e2e-tests-example-wrapper-block\\"></div>
+<!-- /wp:e2e-tests-example/wrapper-block -->"
+`;
+
+exports[`wrapper block Margin bottom should be applied 1`] = `
+"<!-- wp:e2e-tests-example/wrapper-block {\\"marginBottom\\":true} -->
+<div style=\\"margin-bottom:60px\\" class=\\"wp-block-e2e-tests-example-wrapper-block\\"></div>
+<!-- /wp:e2e-tests-example/wrapper-block -->"
+`;
+
+exports[`wrapper block Wrapper block should be available 1`] = `
+"<!-- wp:e2e-tests-example/wrapper-block -->
+<div class=\\"wp-block-e2e-tests-example-wrapper-block\\"></div>
+<!-- /wp:e2e-tests-example/wrapper-block -->"
+`;
