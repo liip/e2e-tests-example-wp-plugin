@@ -2,7 +2,7 @@
 /**
  * Plugin Name: e2e-tests-example-wrapper-block-filters
  * Description: [FOR TESTING PURPOSES ONLY] Plugin to test wrapper block filters.
- * Plugin URI: https://github.com/liip/e2e-tests-example
+ * Plugin URI: https://github.com/liip/e2e-tests-example-wp-plugin
  * Author: Liip AG
  *
  * @package e2e-tests-example-wrapper-block-filters
