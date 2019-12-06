@@ -17,7 +17,7 @@ export const getBlockByName = async ( name, index = 0 ) => {
 
 export const selectOptionIsAvailable = async ( selectLabel, optionValue ) => {
 	const [ optionEl ] = await page.$x( `//label[@class="components-base-control__label"][contains(text(),"${ selectLabel }")]/following-sibling::select[@class="components-select-control__input"]/option[@value="${ optionValue }"]` );
-	return !!optionEl;
+	return !! optionEl;
 };
 
 export const clickElementByText = async ( elementExpression, text ) => {
