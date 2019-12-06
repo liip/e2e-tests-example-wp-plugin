@@ -1,13 +1,14 @@
 {
-	"name": "e2e-tests-example",
-	"version": "1.0.0",
-	"description": "Example how to write E2E tests for a Gutenberg block in WordPress",
-	"author": "Liip AG",
-	"dependencies": {},
-	"devDependencies": {
-		"@wordpress/scripts": "^6.0.0"
-	},
-	"private": true,
+  "name": "e2e-tests-example",
+  "version": "1.0.0",
+  "description": "Example how to write E2E tests for a Gutenberg block in WordPress",
+  "author": "Liip AG",
+  "dependencies": {},
+  "devDependencies": {
+    "@wordpress/e2e-test-utils": "^3.0.0",
+    "@wordpress/scripts": "^6.0.0"
+  },
+  "private": true,
   "scripts": {
     "start": "wp-scripts start",
     "dev": "npm run start",
