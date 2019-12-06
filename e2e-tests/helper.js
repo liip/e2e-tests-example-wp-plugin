@@ -15,6 +15,11 @@ export const getBlockByName = async ( name, index = 0 ) => {
 	return blocksByName[ index ];
 };
 
+export const selectOptionIsAvailable = async ( selectLabel, optionValue ) => {
+	const [ optionEl ] = await page.$x( `//label[@class="components-base-control__label"][contains(text(),"${ selectLabel }")]/following-sibling::select[@class="components-select-control__input"]/option[@value="${ optionValue }"]` );
+	return !!optionEl;
+};
+
 export const clickElementByText = async ( elementExpression, text ) => {
 	const [ element ] = await page.$x( `//${ elementExpression }[contains(text(),"${ text }")]` );
 	await element.click();

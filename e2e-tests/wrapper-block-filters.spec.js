@@ -12,6 +12,7 @@ import {
 import {
 	selectBlockByName,
 	selectOption,
+	selectOptionIsAvailable,
 } from './helper';
 
 describe( 'wrapper block filters', () => {
@@ -32,10 +33,10 @@ describe( 'wrapper block filters', () => {
 		await insertBlock( 'Wrapper Block' );
 		await selectBlockByName( 'e2e-tests-example/wrapper-block' );
 
-		// Additional style option should be available
-		expect( await page.$( 'select.components-select-control__input > option[value="green"]' ) ).not.toBeNull();
+		// Additional background color option should be available
+		expect( await selectOptionIsAvailable( 'Background Color', 'green' ) ).toBe( true );
 
-		// Style option should be applied
+		// Background color should be applied
 		await selectOption( 'Background Color', 'green' );
 
 		// Editor content should match snapshot
