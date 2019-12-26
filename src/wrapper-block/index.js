@@ -54,17 +54,7 @@ registerBlockType( 'e2e-tests-example/wrapper-block', {
 		__( 'Wrapper Block', 'e2e-tests-example' ),
 	],
 
-	attributes: {
-		bgColor: {
-			type: 'string',
-		},
-		alignment: {
-			type: 'string',
-		},
-		marginBottom: {
-			type: 'boolean',
-		},
-	},
+	// attributes are defined server side with register_block_type(). This is needed to make default attributes available in the blocks render callback.
 
 	edit( { attributes, setAttributes, className } ) {
 		const {
@@ -115,19 +105,9 @@ registerBlockType( 'e2e-tests-example/wrapper-block', {
 		);
 	},
 
-	save( { attributes } ) {
-		const {
-			bgColor = '',
-			alignment = '',
-			marginBottom = false,
-		} = attributes;
-
+	save() {
 		return (
-			<div
-				style={ prepareStyles( bgColor, alignment, marginBottom ) }
-			>
-				<InnerBlocks.Content />
-			</div>
+			<InnerBlocks.Content />
 		);
 	},
 } );

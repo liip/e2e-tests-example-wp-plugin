@@ -1,7 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`wrapper block filters e2eTestsExample.wrapperBlock.bgColorOptions should add bg options 1`] = `
-"<!-- wp:e2e-tests-example/wrapper-block {\\"bgColor\\":\\"green\\"} -->
-<div style=\\"background-color:green\\" class=\\"wp-block-e2e-tests-example-wrapper-block\\"></div>
-<!-- /wp:e2e-tests-example/wrapper-block -->"
-`;
+exports[`wrapper block filters e2eTestsExample.wrapperBlock.bgColorOptions should add bg options 1`] = `"<!-- wp:e2e-tests-example/wrapper-block {\\"bgColor\\":\\"green\\"} /-->"`;
