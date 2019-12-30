@@ -38,6 +38,14 @@ let bgColorOptions = [
 ];
 bgColorOptions = applyFilters( 'e2eTestsExample.wrapperBlock.bgColorOptions', bgColorOptions );
 
+const prepareStyles = ( bgColor, alignment, marginBottom ) => {
+	return {
+		backgroundColor: bgColor && bgColor !== '' ? bgColor : null,
+		marginBottom: marginBottom ? '60px' : null,
+		textAlign: alignment && alignment !== '' ? alignment : null,
+	};
+};
+
 registerBlockType( 'e2e-tests-example/wrapper-block', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
 	title: __( 'Wrapper Block', 'e2e-tests-example' ), // Block title.
@@ -72,7 +80,7 @@ registerBlockType( 'e2e-tests-example/wrapper-block', {
 				<InspectorControls>
 					<PanelBody
 						title={ __( 'Background Color', 'e2e-tests-example' ) }
-						initialOpen={ true }
+						initialOpen={ false }
 					>
 						<SelectControl
 							label={ __( 'Background Color', 'e2e-tests-example' ) }
@@ -83,7 +91,7 @@ registerBlockType( 'e2e-tests-example/wrapper-block', {
 					</PanelBody>
 					<PanelBody
 						title={ __( 'Margin bottom', 'e2e-tests-example' ) }
-						initialOpen={ true }
+						initialOpen={ false }
 					>
 						<CheckboxControl
 							label={ __( 'Add margin bottom', 'e2e-tests-example' ) }
@@ -101,10 +109,7 @@ registerBlockType( 'e2e-tests-example/wrapper-block', {
 				</BlockControls>
 				<div
 					className={ className }
-					style={ {
-						backgroundColor: bgColor,
-						marginBottom: marginBottom ? '60px' : null,
-					} }
+					style={ prepareStyles( bgColor, alignment, marginBottom ) }
 				>
 					<InnerBlocks />
 				</div>
@@ -115,22 +120,13 @@ registerBlockType( 'e2e-tests-example/wrapper-block', {
 	save( { attributes } ) {
 		const {
 			bgColor = '',
+			alignment = '',
 			marginBottom = false,
 		} = attributes;
 
-		const styles = {};
-
-		// Only set attributes when background color is chosen
-		if ( '' !== bgColor ) {
-			styles.backgroundColor = bgColor;
-		}
-		if ( marginBottom ) {
-			styles.marginBottom = '60px';
-		}
-
 		return (
 			<div
-				style={ styles }
+				style={ prepareStyles( bgColor, alignment, marginBottom ) }
 			>
 				<InnerBlocks.Content />
 			</div>

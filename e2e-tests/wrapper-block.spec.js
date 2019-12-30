@@ -1,7 +1,6 @@
-/**
- * WordPress dependencies
- */
 import {
+	clickBlockToolbarButton,
+	clickButton,
 	createNewPost,
 	enablePageDialogAccept,
 	getEditedPostContent,
@@ -9,11 +8,12 @@ import {
 } from '@wordpress/e2e-test-utils';
 import {
 	clickElementByText,
+	openSidebarPanelWithTitle,
 	selectBlockByName,
 	selectOption,
 } from './helper';
 
-describe( 'wrapper block', () => {
+describe( 'Wrapper block', () => {
 	beforeAll( async () => {
 		enablePageDialogAccept();
 	} );
@@ -35,6 +35,7 @@ describe( 'wrapper block', () => {
 		await selectBlockByName( 'e2e-tests-example/wrapper-block' );
 
 		// Change background color
+		await openSidebarPanelWithTitle( 'Background Color' );
 		await selectOption( 'Background Color', 'orange' );
 
 		expect( await getEditedPostContent() ).toMatchSnapshot();
@@ -45,7 +46,19 @@ describe( 'wrapper block', () => {
 		await selectBlockByName( 'e2e-tests-example/wrapper-block' );
 
 		// Change background color
+		await openSidebarPanelWithTitle( 'Margin bottom' );
 		await clickElementByText( 'label', 'Add margin bottom' );
+
+		expect( await getEditedPostContent() ).toMatchSnapshot();
+	} );
+
+	it( 'Alignment should be set', async () => {
+		await insertBlock( 'Wrapper Block' );
+		await selectBlockByName( 'e2e-tests-example/wrapper-block' );
+
+		// Change alignment
+		await clickBlockToolbarButton( 'Change wrapper block alignment' );
+		await clickButton( 'Align Text Center' );
 
 		expect( await getEditedPostContent() ).toMatchSnapshot();
 	} );

@@ -1,6 +1,3 @@
-/**
- * WordPress dependencies
- */
 import {
 	activatePlugin,
 	deactivatePlugin,
@@ -10,6 +7,7 @@ import {
 	enablePageDialogAccept,
 } from '@wordpress/e2e-test-utils';
 import {
+	openSidebarPanelWithTitle,
 	selectBlockByName,
 	selectOption,
 	selectOptionIsAvailable,
@@ -34,6 +32,7 @@ describe( 'wrapper block filters', () => {
 		await selectBlockByName( 'e2e-tests-example/wrapper-block' );
 
 		// Additional background color option should be available
+		await openSidebarPanelWithTitle( 'Background Color' );
 		expect( await selectOptionIsAvailable( 'Background Color', 'green' ) ).toBe( true );
 
 		// Background color should be applied
