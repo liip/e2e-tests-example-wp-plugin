@@ -49,6 +49,9 @@ function wrapper_block_render_callback( $attributes, $content ) {
 	if ( array_key_exists( 'bgColor', $attributes ) && ! empty( $attributes['bgColor'] ) ) {
 		$styles .= 'background-color: ' . $attributes['bgColor'] . ';';
 	}
+	if ( array_key_exists( 'alignment', $attributes ) && ! empty( $attributes['alignment'] ) ) {
+		$styles .= 'text-align: ' . $attributes['alignment'] . ';';
+	}
 	if ( array_key_exists( 'marginBottom', $attributes ) && ! empty( $attributes['marginBottom'] ) ) {
 		$styles .= 'margin-bottom: 60px;';
 	}
