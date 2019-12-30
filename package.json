@@ -6,7 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "@wordpress/e2e-test-utils": "^3.0.0",
-    "@wordpress/scripts": "^6.0.0"
+    "@wordpress/scripts": "^6.1.0"
   },
   "private": true,
   "scripts": {
