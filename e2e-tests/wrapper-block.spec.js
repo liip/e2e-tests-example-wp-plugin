@@ -45,7 +45,7 @@ describe( 'Wrapper block', () => {
 		await insertBlock( 'Wrapper Block' );
 		await selectBlockByName( 'e2e-tests-example/wrapper-block' );
 
-		// Change background color
+		// Apply margin bottom
 		await openSidebarPanelWithTitle( 'Margin bottom' );
 		await clickElementByText( 'label', 'Add margin bottom' );
 
