@@ -2,24 +2,24 @@
  * BLOCK: e2e-tests-example/wrapper-block
  */
 
-const { __ } = wp.i18n; // Import __() from wp.i18n
-const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
+const { __ } = wp.i18n; // Translate function
+const { registerBlockType } = wp.blocks; // Function to register our block
 const {
 	Fragment, // Used to wrap our edit component and only have one root element
 } = wp.element;
 const {
 	InnerBlocks, // Allows it to place child blocks inside our block
-	InspectorControls, // We place our select control inside the inspector contorls which show up on the right of the editor
-	BlockControls,
-	AlignmentToolbar,
+	InspectorControls, // We place our select control inside the inspector controls which show up at the right side of the editor
+	AlignmentToolbar, // This is the alignment toolbar to select the alignment of the block content
+	BlockControls, // We place our alignment toolbar inside the block controls which show up above the selected block
 } = wp.blockEditor;
 const {
-	PanelBody, // A panel where we place our select control in (creates a colapsable element)
+	PanelBody, // A panel where we place our select control in (creates a collapsible element)
 	SelectControl, // Our select control to choose the background color
-	CheckboxControl,
+	CheckboxControl, // We use the checkbox control to enable the margin bottom
 } = wp.components;
 const {
-	applyFilters,
+	applyFilters, // We use this function to make the background color options filterable
 } = wp.hooks;
 
 let bgColorOptions = [
