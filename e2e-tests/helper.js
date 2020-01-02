@@ -4,15 +4,10 @@ import {
 	selectBlockByClientId,
 } from '@wordpress/e2e-test-utils';
 
-export const selectBlockByName = async ( name, index = 0 ) => {
+export const selectBlockByName = async ( name ) => {
 	await selectBlockByClientId(
-		( await getBlockByName( name, index ) ).clientId
+		( await getAllBlocks() ).find( ( block ) => block.name === name ).clientId
 	);
-};
-
-export const getBlockByName = async ( name, index = 0 ) => {
-	const blocksByName = ( await getAllBlocks() ).filter( ( block ) => block.name === name );
-	return blocksByName[ index ];
 };
 
 export const selectOptionIsAvailable = async ( selectLabel, optionValue ) => {
