@@ -47,16 +47,14 @@ const prepareStyles = ( bgColor, alignment, marginBottom ) => {
 };
 
 registerBlockType( 'e2e-tests-example/wrapper-block', {
-	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
 	title: __( 'Wrapper Block', 'e2e-tests-example' ), // Block title.
-	icon: 'editor-table', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
-	category: 'layout', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
+	icon: 'editor-table', // Block icon from Dashicons
+	category: 'layout', // Block category
 	keywords: [
 		__( 'Wrapper Block', 'e2e-tests-example' ),
 	],
 
 	attributes: {
-		// Register bgColor attribute to save the chosen color
 		bgColor: {
 			type: 'string',
 		},
