@@ -15,7 +15,7 @@ import {
 
 describe( 'Wrapper block', () => {
 	beforeAll( async () => {
-		enablePageDialogAccept();
+		await enablePageDialogAccept();
 	} );
 	beforeEach( async () => {
 		await createNewPost();
