@@ -1,8 +1,9 @@
 # Example how to write E2E tests for a Gutenberg block in WordPress
 
-This is a WordPress plugin which shows how to create E2E tests for a Gutenberg block in WordPress.
-This blog post explains how it works: ???
-Feel free to use this plugin as a starting point to create your own E2E tests in your WordPress project.
+This is a WordPress plugin which shows how to write E2E tests for a Gutenberg block in WordPress.
+This blog post explains how it works: https://www.liip.ch/en/blog/how-to-test-your-gutenberg-blocks
+
+Feel free to use this plugin as a starting point to write your own E2E tests for your Gutenberg block.
 
 ## Developer information
 
